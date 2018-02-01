@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Box Land: Land of Boxes</title>
+	<!-- Internal style sheet, applies only to this page -->
+
+	<style type="text/css">
+		/* In a style tag, comments look like this */
+		/* Tag selector to apply to all divs by default on our page */
+
+		div{
+			min-height: 20px;
+			overflow-y: visible;
+			border: 5px solid rebeccapurple;
+		}
+
+		/* Class selectors apply only to the elements that receive the class attribute that matches */
+
+		.container{
+			width: 900px;
+			margin: 0 auto;
+		}
+
+		/* Now we want to make each of the thumbnails stack horizontally */
+
+		.thumbnail{
+			border: 1px solid #ff0000;
+			width: 298px;
+			height: 298px;
+			float: left;
+		}
+
+		/*
+		This is the proper way to clear out floats. The rule of thumb is after you float, you have to clear:both;
+		::after is a pseudo class selector, this inserts an element via css called after. It receives content, clears both.
+		*/
+
+		.clearfix::after{
+			content: "";
+			clear: both;
+			display: block;
+		}
+
+		.thumbnail-padding{
+			border: 5px solid #00FF00;
+			width: 270px;
+			height: 270px;
+			padding: 10px;
+			float: left;
+		}
+
+		.thumbnail-margin{
+			border: 5px solid #0000FF;
+			width: 270px;
+			height: 270px;
+			margin: 10px;
+			float: left;
+		}
+
+		.thumbnail-box{
+			box-sizing: border-box;
+			width: 290px;
+			padding: 10px;
+			border: 5px solid grey;
+			float: left;
+			height: 300px;
+			margin: 5px;
+			width: calc(300px - 10px);
+		}
+
+		.container-in{
+			width: 1000px;
+			margin: 0 auto;
+			font-size: 0;
+			color: blue;
+		}
+
+		.thumbnail-in{
+			width: 250px;
+			box-sizing: border-box;
+			border: 3px solid black;
+			display: inline-block;
+			font-size: 12pt;
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+	<div class="container clearfix">
+
+		<div class="thumbnail"></div>
+		<div class="thumbnail"></div>
+		<div class="thumbnail"></div>
+
+	</div>
+
+	<div class="container clearfix">
+
+		<div class="thumbnail-padding"></div>
+		<div class="thumbnail-padding"></div>
+		<div class="thumbnail-padding"></div>
+
+	</div>
+
+	<div class="container clearfix">
+
+		<div class="thumbnail-margin"></div>
+		<div class="thumbnail-margin"></div>
+		<div class="thumbnail-margin"></div>
+
+	</div>
+
+	<div class="container clearfix">
+
+		<div class="thumbnail-box"></div>
+		<div class="thumbnail-box"></div>
+		<div class="thumbnail-box"></div>
+
+	</div>
+
+	<div class="container-in clearfix">
+
+		<div class="thumbnail-in">back</div>
+		<div class="thumbnail-in">street's</div>
+		<div class="thumbnail-in">back</div>
+		<div class="thumbnail-in">alright</div>
+
+	</div>
+
+	<p>yall already know tf goin on........</p>
+
+</body>
+</html>
